@@ -11,4 +11,8 @@
 #  updated_at :datetime         not null
 #
 class Actor < ApplicationRecord
+  def characters
+    metching_characters = Character.where({ :actor_id => self.id})
+    return metching_characters
+  end
 end
